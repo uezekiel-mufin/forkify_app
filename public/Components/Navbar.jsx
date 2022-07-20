@@ -8,18 +8,15 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = ({
   setSearchDetails,
-  currentPage,
   setCurrentPage,
-  modal,
   setModal,
   bookmark,
-  setBookmark,
   displayBookmark,
+  bookmarkRef,
 }) => {
   const [inputText, setInputText] = useState("");
   const [isOpen, setIsOpen] = useState(true);
   const [isMenu, setIsMenu] = useState(false);
-  const bookmarkRef = useRef();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -32,15 +29,6 @@ const Navbar = ({
   };
   const closeBookmark = () => {
     bookmarkRef.current.style.display = "none";
-  };
-
-  const handleMenu = () => {
-    const el = document.querySelector(".navigation");
-    console.log(el);
-    console.log(el?.classList.contains("navigation"));
-    el?.classList.toggle("navigation");
-
-    setIsMenu(!isMenu);
   };
 
   const openMenu = (e) => {
@@ -93,8 +81,8 @@ const Navbar = ({
             <AiOutlineMenuFold style={{ fontSize: "3.5rem" }} />
           </span>
         )}
-        <ul className='menu__items'>
-          <li className='flex cursor-pointer  w-[145px] justify-center gap-4 items-center text-[1.4rem] text-[#615551] font-semibold '>
+        <ul className='navigation menu__items'>
+          <li className='flex cursor-pointer  w-[145px] justify-center gap-4 items-center text-[1.4rem]  font-semibold '>
             <span className='text-[#f48982]'>
               <FiEdit />
             </span>
@@ -102,7 +90,7 @@ const Navbar = ({
           </li>
           <li
             onMouseLeave={() => closeBookmark()}
-            className='flex cursor-pointer w-[145px] justify-center gap-4 items-center text-[1.5rem] text-[#615551] font-semibold z-[10000] '
+            className='flex cursor-pointer w-[145px] justify-center gap-4 items-center text-[1.5rem]  font-semibold z-[10000] '
           >
             <span onMouseOver={() => openBookmark()} className='text-[#f48982]'>
               <FaRegBookmark />

@@ -79,6 +79,12 @@ html {
   border-radius: 5px;
 }
 
+@media (max-width: 600px) {
+  .bookmark {
+    right: 0px;
+  }
+}
+
 .search {
   background-color: #fff;
   border-radius: 10rem;
@@ -90,10 +96,12 @@ html {
   width: 503px;
   height: 40px;
 }
+
 .navigation {
   display: flex;
   width: 297.3px;
   justify-content: space-around;
+  color: #615551;
 }
 
 @media (max-width: 765px) {
@@ -104,13 +112,15 @@ html {
 
   .navigation {
     display: none;
+    color: white;
   }
 
   .small__navigation {
     display: flex;
-    /* flex-direction: column; */
+    background-color: #f7b6b1;
+    padding: 1rem;
     position: absolute;
-    right: 0;
+    right: -20px;
     width: 250px;
     top: 50px;
     /* height: 100px; */
@@ -188,11 +198,19 @@ html {
   width: 100rem;
   background-color: white;
   border-radius: 9px;
-
   padding: 5rem 6rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
   z-index: 1000;
   transition: all 0.5s;
+}
+
+@media (max-width: 600px) {
+  .modal__content {
+    padding: 1rem;
+    width: 90%;
+    height: 80%;
+    overflow: scroll;
+  }
 }
 
 .btn--close-modal {
@@ -215,6 +233,13 @@ html {
 .recipe__input {
   display: grid;
   grid-template-columns: 1fr 4fr;
+}
+
+@media (max-width: 600px) {
+  .recipe__input {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 .recipe__label {

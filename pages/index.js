@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import HowToCook from "../public/Components/HowToCook";
 import Navbar from "../public/Components/Navbar";
 import RecipeViews from "../public/Components/RecipeViews";
@@ -6,6 +6,7 @@ import SearchResults from "../public/Components/SearchResults";
 import AddRecipe from "../public/Components/AddRecipe";
 
 export default function Home() {
+  const bookmarkRef = useRef();
   const [searchDetails, setSearchDetails] = useState("");
   const [fetchedRecipes, setFetchedRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -87,6 +88,7 @@ export default function Home() {
     setRecipeIngredients(selectedBookmark[0].ingredients);
     setRecipeServings(selectedBookmark[0].servings);
     markBookmarked(selectedBookmark[0]);
+    bookmarkRef.current.style.display = "none";
   };
 
   //A functionality to uploading new recipe and setting the newRecipe to the current recipe displayed
@@ -203,6 +205,7 @@ export default function Home() {
         bookmark={bookmark}
         setBookmark={setBookmark}
         displayBookmark={displayBookmark}
+        bookmarkRef={bookmarkRef}
       />
 
       <div className='main__section '>
