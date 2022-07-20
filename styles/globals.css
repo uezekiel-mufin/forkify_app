@@ -82,6 +82,9 @@ html {
 @media (max-width: 600px) {
   .bookmark {
     right: 0px;
+    width: 96vw;
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
   }
 }
 
