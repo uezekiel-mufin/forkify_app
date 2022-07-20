@@ -67,7 +67,7 @@ const RecipeViews = ({
             cssOverride={override}
           />
         )}
-        <div className='absolute bottom-[-40px] md:py-[1rem] recipe__title bg-bgRecipeTitlepy justify-center text-center items-center px-[2rem]'>
+        <div className='absolute bottom-[-40px] md:bottom-0 md:py-[1rem] recipe__title bg-bgRecipeTitlepy justify-center text-center items-center px-[2rem]'>
           <span className='text-[16px] md:text-[3rem] text-center h-full md:leading-[3rem] '>
             {recipeDetails?.title}
           </span>
