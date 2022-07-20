@@ -114,7 +114,7 @@ const RecipeViews = ({
           {isClicked ? <BsBookmarkFill /> : <BsBookmark />}
         </span>
       </div>
-      <div className=' bg-[#f2efee] py-[3rem] px-[4rem] '>
+      <div className=' bg-[#f2efee] py-[3rem] md:px-[4rem] '>
         <div className=' '>
           <span className='text-[2rem] text-[#f38e82] uppercase flex justify-center mb-8 font-bold tracking-[0.3rem]'>
             recipe ingredients

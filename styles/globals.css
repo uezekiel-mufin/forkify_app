@@ -96,7 +96,7 @@ html {
   justify-content: space-around;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 765px) {
   .search {
     height: 30px;
     width: 200px;
@@ -106,13 +106,14 @@ html {
     display: none;
   }
 
-  .navigation__show {
+  .small__navigation {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     position: absolute;
     right: 0;
-    width: 150px;
-    top: 65px;
+    width: 250px;
+    top: 50px;
+    /* height: 100px; */
   }
 }
 

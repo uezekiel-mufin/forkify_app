@@ -36,13 +36,29 @@ const Navbar = ({
 
   const handleMenu = () => {
     const el = document.querySelector(".navigation");
-    const elShow = document.querySelector(".navigation__show");
     console.log(el);
-    console.log(el.classList.contains("navigation"));
-    el.classList.remove("navigation");
-    elShow.classList.add("navigation__show");
+    console.log(el?.classList.contains("navigation"));
+    el?.classList.toggle("navigation");
+
     setIsMenu(!isMenu);
   };
+
+  const openMenu = (e) => {
+    const el = document.querySelector(".menu__items");
+    console.log(el);
+    console.log(el?.classList.contains("navigation"));
+    el?.classList.add("small__navigation");
+
+    setIsMenu(!isMenu);
+  };
+
+  const closeMenu = (e) => {
+    const elShow = document.querySelector(".menu__items");
+    console.log(elShow);
+    setIsMenu(!isMenu);
+    elShow.classList.remove("small__navigation");
+  };
+
   return (
     <div className='header'>
       <Image src='/img/logo.png' alt='logo' width={150} height={50} />
@@ -61,23 +77,23 @@ const Navbar = ({
           <span>Search</span>
         </button>
       </form>
-      <nav className='flex md:justify-center md:items-center relative w-8 md:w-[332px] md:h-[100px]'>
+      <nav className=' flex md:justify-center md:items-center relative w-8 md:w-[332px] md:h-[100px]'>
         {isMenu ? (
           <span
             className='md:invisible visible text-[4xl] text-[#f48982]'
-            onClick={handleMenu}
+            onClick={(e) => closeMenu(e)}
           >
             <AiOutlineClose style={{ fontSize: "3rem" }} />
           </span>
         ) : (
           <span
             className='md:invisible visible text-[4xl] text-[#f48982] '
-            onClick={handleMenu}
+            onClick={(e) => openMenu(e)}
           >
             <AiOutlineMenuFold style={{ fontSize: "3.5rem" }} />
           </span>
         )}
-        <ul className='navigation'>
+        <ul className='menu__items'>
           <li className='flex cursor-pointer  w-[145px] justify-center gap-4 items-center text-[1.4rem] text-[#615551] font-semibold '>
             <span className='text-[#f48982]'>
               <FiEdit />
