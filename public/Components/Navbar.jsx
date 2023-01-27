@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaRegBookmark } from "react-icons/fa";
-import { FiEdit } from "react-icons/fi";
-import { AiOutlineMenuFold } from "react-icons/ai";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
+import { AiOutlineMenuFold } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = ({
   setSearchDetails,
@@ -14,8 +14,7 @@ const Navbar = ({
   displayBookmark,
   bookmarkRef,
 }) => {
-  const [inputText, setInputText] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
+  const [inputText, setInputText] = useState('');
   const [isMenu, setIsMenu] = useState(false);
 
   const handleClick = (e) => {
@@ -25,42 +24,42 @@ const Navbar = ({
   };
 
   const openBookmark = () => {
-    bookmarkRef.current.style.display = "flex";
+    bookmarkRef.current.style.display = 'flex';
   };
   const closeBookmark = () => {
-    bookmarkRef.current.style.display = "none";
+    bookmarkRef.current.style.display = 'none';
   };
 
   const openMenu = (e) => {
-    const el = document.querySelector(".menu__items");
+    const el = document.querySelector('.menu__items');
     console.log(el);
-    console.log(el?.classList.contains("navigation"));
-    el?.classList.add("small__navigation");
+    console.log(el?.classList.contains('navigation'));
+    el?.classList.add('small__navigation');
 
     setIsMenu(!isMenu);
   };
 
   const closeMenu = (e) => {
-    const elShow = document.querySelector(".menu__items");
+    const elShow = document.querySelector('.menu__items');
     console.log(elShow);
     setIsMenu(!isMenu);
-    elShow.classList.remove("small__navigation");
+    elShow.classList.remove('small__navigation');
   };
 
   return (
-    <div className='header'>
+    <div className='header relative'>
       <Image src='/img/logo.png' alt='logo' width={150} height={50} />
       <form
         onSubmit={(e) => handleClick(e)}
-        className='flex search justify-between gap-4 md:pl-10 '
+        className='flex search justify-between box-border md:pl-10 absolute bottom-0 left-0 right-0   md:static'
       >
         <input
           type='text'
-          placeholder='Search over 1,000,000 recipes...'
-          className='h-[11px] text-[14px] w-1/12 md:w-full md:h-[23px] md:text-[1.7rem] flex-1 focus:outline-none '
+          placeholder='Search over 1,000,000 recipes... e.g mango, avocado'
+          className='placeholder:text-[12px] h-[11px] text-[14px] w-1/12 md:w-full md:h-[23px] md:text-[1.7rem] flex-1 focus:outline-none '
           onChange={(e) => setInputText(e.target.value)}
         />
-        <button className='flex w-[70px] text-xl h-[30px] justify-around md:w-[173.52px] md:h-[53px] md:justify-evenly items-center  md:text-4xl bg-bgHeaderButton rounded-full text-white font-medium'>
+        <button className=' flex w-[70px] text-xl justify-around md:w-[173.52px] h-full md:justify-evenly items-center  md:text-4xl bg-bgHeaderButton rounded-full text-white font-medium'>
           <AiOutlineSearch />
           <span>Search</span>
         </button>
@@ -71,14 +70,14 @@ const Navbar = ({
             className='md:invisible visible text-[4xl] text-[#f48982]'
             onClick={(e) => closeMenu(e)}
           >
-            <AiOutlineClose style={{ fontSize: "3rem" }} />
+            <AiOutlineClose style={{ fontSize: '3rem' }} />
           </span>
         ) : (
           <span
             className='md:invisible visible text-[4xl] text-[#f48982] '
             onClick={(e) => openMenu(e)}
           >
-            <AiOutlineMenuFold style={{ fontSize: "3.5rem" }} />
+            <AiOutlineMenuFold style={{ fontSize: '3.5rem' }} />
           </span>
         )}
         <ul className='navigation menu__items'>

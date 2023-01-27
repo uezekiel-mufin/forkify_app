@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState } from 'react';
+import Image from 'next/image';
 
 const SearchResults = ({
   fetchedRecipes,
@@ -13,13 +13,13 @@ const SearchResults = ({
   const pages = +Math.ceil(fetchedRecipes?.length / pageLimit);
   const prev = (e) => {
     const target = e.target;
-    if (target.closest(".btn-prev") && currentPage > 1) {
+    if (target.closest('.btn-prev') && currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
   const next = (e) => {
     const target = e.target;
-    if (target.closest(".btn-next") && currentPage <= pages - 1) {
+    if (target.closest('.btn-next') && currentPage <= pages - 1) {
       setCurrentPage(currentPage + 1);
       if (currentPage === pages) return;
     }
@@ -28,9 +28,12 @@ const SearchResults = ({
   return (
     <div className='sidebar'>
       <ul className='flex flex-1 flex-col py-[3rem]'>
-        {fetchedRecipes?.slice(start, end).map((item, index) => (
+        {fetchedRecipes?.slice(start, end).map((item) => (
           <li key={item.id} onClick={() => getRecipeDetails(item.id)}>
-            <a className='flex  gap-8 py-[1.5rem] px-[3.25rem] items-center hover:bg-[#f2efee] cursor-pointer'>
+            <a
+              href='#recipeView'
+              className='flex scroll-smooth gap-8 py-[1.5rem] px-[3.25rem] items-center hover:bg-[#f2efee] cursor-pointer'
+            >
               <Image
                 src={`${item.image_url}`}
                 alt='item__image'

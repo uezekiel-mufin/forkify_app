@@ -1,13 +1,13 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { BsBookmark } from "react-icons/bs";
-import { BsBookmarkFill } from "react-icons/bs";
-import { BsClock } from "react-icons/bs";
-import { BsPeople } from "react-icons/bs";
-import { IoMdAddCircleOutline } from "react-icons/io";
-import { AiOutlineMinusCircle } from "react-icons/ai";
-import { FcCheckmark } from "react-icons/fc";
-import FadeLoader from "react-spinners/FadeLoader";
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { BsBookmark } from 'react-icons/bs';
+import { BsBookmarkFill } from 'react-icons/bs';
+import { BsClock } from 'react-icons/bs';
+import { BsPeople } from 'react-icons/bs';
+import { IoMdAddCircleOutline } from 'react-icons/io';
+import { AiOutlineMinusCircle } from 'react-icons/ai';
+import { FcCheckmark } from 'react-icons/fc';
+import FadeLoader from 'react-spinners/FadeLoader';
 
 const RecipeViews = ({
   loader,
@@ -39,18 +39,18 @@ const RecipeViews = ({
   };
 
   const override = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red",
+    display: 'block',
+    margin: '0 auto',
+    borderColor: 'red',
   };
   console.log(isClicked);
   return (
-    <div className='main'>
+    <div className='main' id='recipeView'>
       <div className='w-full justify-center opacity-70 relative md:h-[400px]'>
         {loader ? (
           <Image
             src={
-              recipeDetails ? `${recipeDetails?.image}` : "/public/img/logo.png"
+              recipeDetails ? `${recipeDetails?.image}` : '/public/img/logo.png'
             }
             alt='sample'
             width={1000}
