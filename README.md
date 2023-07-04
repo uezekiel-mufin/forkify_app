@@ -184,7 +184,7 @@ This Project was built with the following technologies
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://forkify-nextjs.vercel.app/)
+- [Live Demo Link](https://forkify-app-five.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,7 +203,7 @@ In order to run this project you need to run the following command:
 Clone this repository to your desired folder:
 
 - cd my-folder
-- git clone https://github.com/Ezzywealth/forkify-nextjs
+- git clone https://github.com/Ezzywealth/forkify_app
 
 ### Install
 
